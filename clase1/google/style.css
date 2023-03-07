@@ -1,0 +1,68 @@
+/* corresponde al icono de google */
+#logo {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 145;
+    width: 270;
+}
+
+input {
+    /* esto corresponde al texto de dentro del recuadro("Search Google or type a URL") */
+    background-color: var(--search-box-bg, #fff);
+    border: none;
+    border-radius: var(--ntp-realbox-border-radius);
+    color: var(--search-box-text);
+    font-family: inherit;
+    font-size: inherit;
+    height: 100%;
+    outline: 0;
+    padding-inline-end: 44px;
+    padding-inline-start: 52px;
+    position: relative;
+    width: 100%;
+}
+
+input[type="search" i] {
+    /* corresponde al recuadro de search */
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    line-height: 50px;
+    border: 2px black solid;
+    height: 44px;
+    width: 561px;
+    /* border-radius: 10%; */
+    /* como ponerlo solo con respecto al recuadro, sin que tome todo el contexto */
+}
+
+input {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+
+}
+
+/* :host {
+    --ntp-realbox-border-radius: calc(0.5 * var(--ntp-realbox-height));
+    --ntp-realbox-height: 44px;
+    --ntp-realbox-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    border-radius: var(--ntp-realbox-border-radius);
+    box-shadow: var(--ntp-realbox-shadow);
+    font-size: 16px;
+    height: var(--ntp-realbox-height);
+} */

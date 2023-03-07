@@ -1,0 +1,30 @@
+body {
+    font-size: 30px;
+    background-color: blue;
+}
+
+.clickable {
+    /*elements from clickable */
+    cursor: pointer
+}
+
+.featured {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#bolita {
+    height: 40px;
+    width: 40px;
+    border: black solid;
+    border-radius: 50%;
+    background-color: #fabada;
+}
+
+#finalPos {
+    top: 200px;
+}
+
+#unico {
+    color: black
+}

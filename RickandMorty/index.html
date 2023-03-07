@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <script lang="javascript">
+        var pageNumber = 1;
+        function fetchCharacters(page) {
+            fetch("https://rickandmortyapi.com/api/character/?page=" + page)
+                .then(data => data.json())
+                .then(chars => {
+                    var container = document.getElementById("characters");
+                    container.innerHTML = "";
+                    for (var char of chars.results) {
+                        container.innerHTML += `
+                            <div>
+                                <img src="${char.image}" />
+                                <span>${char.name}</span>
+                            </div>
+                        `;
+                    }
+                })
+        }
+        function fetchCharacters_byName() {
+            var elem = document.getElementsByTagName("input")[0].value;
+            console.log(elem);
+            fetch("https://rickandmortyapi.com/api/character/?name=" + elem)
+                .then(data => data.json())
+                .then(chars => {
+                    var container = document.getElementById("characters");
+                    container.innerHTML = "";
+                    for (var char of chars.results) {
+                        if (char.name == elem) {
+                            container.innerHTML += `
+                            <div>
+                                <img src="${char.image}" />
+                                <span>${char.name}</span>
+                            </div>
+                        `;
+                        }
+
+                    }
+                })
+        }
+        function nextPage() {
+            pageNumber++;
+            fetchCharacters(pageNumber);
+        }
+        function prevPage() {
+            if (pageNumber == 1) fetchCharacters(1);
+            else {
+                pageNumber--;
+                fetchCharacters(pageNumber);
+            }
+
+        }
+
+    </script>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body onload="fetchCharacters(1)">
+    <h1> Rick and Morty fever</h1>
+    <div id="characters" class="order"></div>
+
+
+    <button onclick="prevPage()"> previous</button>&nbsp;
+    <button onclick="nextPage()">Next</button>
+    <input type="text" id="name" placeholder="nombre del personaje"><br />
+    <button id="magnifying-glass" onclick="fetchCharacters_byName()"> Search</button>
+</body>
+
+
+</html>

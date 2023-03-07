@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script lang="javascript">
+        function verifyAge() {
+            var elem = document.getElementById("edad")
+            var val = elem.value
+            console.log("val")
+            if (parseInt(val) < 18) alert("No tienes edad suficiente");
+        }
+    </script> <!-- functions go in script and is written in js, it can be imported from other file -->
+    <link rel="stylesheet" href="style.css">
+    <title>Pagina de Juanma</title>
+</head>
+
+
+<body>
+    <input type="number" id="edad" step="4" placeholder="introduce tu edad"><br />
+    <input type="text" step="4" placeholder="introduce tu nombre"><br />
+    <input type="password" placeholder="password"><br />
+    <button id="send" onclick="verifyAge()">
+        Enviar
+    </button>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script lang="javascript">
+        function saluda() {
+            window.alert("Hola Juanma")
+        }
+        function changeText() {
+            var elem = document.getElementById("texto");
+            elem.innerHTML = "<strong>Has pulsado el boton strong";
+            elem.style.backgroundColor = "white";
+            elem.style.position = "absolute";
+            elem.style.top = "200px";
+        }
+        var movement = "";
+        function move() {
+            var height = window.innerHeight - 40; //it will be the windows height considering the size of the ball
+            var elem = document.getElementById("bolita");
+            var top = parseInt(elem.style.top) || 10; //height at the top of the ball
+            console.log(top);
+            elem.style.position = "absolute";
+            if (top <= 10) movement = "down";
+            if (top < innerHeight && movement == "down") {
+                elem.style.top = (top + 10) + "px";
+            }
+            if (top + 40 >= innerHeight) {  //whn top == innerheight, it will have traveled the whole page
+                movement = "up" //this will be accessed only one in each row
+            }
+
+            if (movement == "up") elem.style.top = (top - 10) + "px";
+        }
+
+        function start() {
+            setInterval(move, 50);
+        }
+    </script> <!-- functions go in script and is written in js, it can be imported from other file -->
+    <link rel="stylesheet" href="style.css">
+    <title>Pagina de Juanma</title>
+</head>
+
+
+<body>
+    <div id="bolita" onclick="start()">
+    </div>
+    <div id="finalPos"></div>
+    <div class="clickable featured" onclick="saluda()">
+        Hola Juanma.
+    </div>
+    <div id="texto">
+        El tiempo es frio
+    </div>
+    <button id="unico" onclick="changeText()"><!-- id prevails before class -->
+        Vamo argentina vieja.
+    </button>
+
+</body>
+
+</html>

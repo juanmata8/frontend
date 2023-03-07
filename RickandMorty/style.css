@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+}
+
+.order {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+
+
+*/ h1 {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    color: white;
+}
+
+#magnifying-glass {
+    position: inherit;
+}
